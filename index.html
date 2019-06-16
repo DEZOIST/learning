@@ -6,109 +6,84 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>learning</title>
     <link rel="icon" href="m.ico">
-    <script>
-         alert("My First JavaScript");
-        //改变图形
-        function changeImage()
-        {
-        element=document.getElementById('myimage')
-        if (element.src.match("eg_bulbon.gif"))
-          {
-          element.src="i\\eg_bulboff.gif";
-          }
-        else
-          {
-          element.src="i\\eg_bulbon.gif";
-          }
-        }
-        //改变内容
-        function myFunction1()
-        {
-            x=document.getElementById("demo-test1");  // 找到元素
-            x.innerHTML="Hello JavaScript!";    // 改变内容
-        }
-        //改变颜色
-        function myFunction2()
-        {
-            x=document.getElementById("demo-test2") // 找到元素
-            x.style.color="#9999ff";          // 改变样式
-        }
-        //认证输入
-        function myFunction3()
-        {
-        var x=document.getElementById("demo-test3").value;
-        if(x==""||isNaN(x))
-            {
-            alert("Not Numeric");
-            }
-        }
-        function myFunction4()
-        {
-        document.write("<h1>Oh!Shit!They has gone missing!</h2>");
-        }
+    <link href="mdui/css&js/mdui.min.css" rel="stylesheet">
+    <script src="mdui/css&js/mdui.min.js" ></script>
 
-    </script>
+    <script src="learning.js"></script>
+
 </head>
-<body  style="background-color:white">
-    <p>
-        JavaScript 能够直接写入 HTML 输出流中：
-    </p>
-        
-    <script>
-        document.write("<h1>This is a heading,my first Javascript!</h1>");
-        document.write("<p>This is a paragraph.</p>");
-    </script>
-        
-    <p>
-        您只能在 HTML 输出流中使用 <strong>document.write</strong>。
-        如果您在文档已加载后使用它（比如在函数中），会覆盖整个文档。
-    </p>
-    
-
-    <h1>我的第二段 JavaScript</h1>
-    <p>
-        JavaScript 能够对事件作出反应。比如对按钮的点击：
-    </p>
-    <button type="button" onclick="alert('Welcome!')">点击这里</button>
 
 
-    <h1>我的第三段 JavaScript</h1>
-    <p id="demo-test1">
-        JavaScript 能改变 HTML 元素的内容。
-    </p>
-    
-    <button type="button" onclick="myFunction1()">点击这里</button>
-    
 
-    <h1>我的第四段 JavaScript</h1>
-    
-        
-    <img id="myimage" onclick="changeImage()" src="i\\eg_bulboff.gif">
-        
-    <p>点击灯泡来点亮或熄灭这盏灯</p>
+<body  style="background-color:silver">
+    <div style="background-color: white;"  class="mdui-container  mdui-shadow-12 ">
+
+    <div style="height: 20px;width:auto"></div>
+    <p>学习来源：<a href="http://www.w3school.com.cn/js/index.asp" target="_blank">w3school</a></p>
+    <div style="height: 20px;width:auto"></div>
+
+    <h1>JavaScript 简介</h1>
+
+    <div class="mdui-divider"></div>
+
+    <h2>JavaScript 能做什么?</h2>
+
+    <div class="mdui-divider"></div><div style="height: 20px;width:auto"></div>
+
+    <h3 id="demo1">JavaScript 能够改变 HTML 内容。</h3>
+    <button type="button" onclick="mj1()">点击我！</button>
+
+    <div style="height: 20px;width:auto"></div><div class="mdui-divider"></div><div style="height: 20px;width:auto"></div>
+
+    <h3>JavaScript 能够改变 HTML 属性值。</h3>
+    <p>在本例中，JavaScript 改变了图像的 src 属性值。</p>
+    <button onclick="mj2()">开灯</button>
+    <img id="myImage"  src="i/eg_bulboff.gif" style="text-align:center;">
+    <button onclick="mj3()">关灯</button>
+
+    <div style="height: 20px;width:auto"></div><div class="mdui-divider"></div><div style="height: 20px;width:auto"></div>
+
+    <h3 id="demo2">JavaScript 能够改变 HTML 元素的样式。</h3>
+    <button type="button" onclick="mj4()">点击我！</button>
+
+    <div style="height: 20px;width:auto"></div><div class="mdui-divider"></div><div style="height: 20px;width:auto"></div>
+
+    <h3 id="demo3">JavaScript 能够隐藏和显示 HTML 元素。</h3>
+    <button type="button" onclick="mj5()">隐藏</button>
+    <button type="button" onclick="mj6()">显示</button>
+
+    <div style="height: 20px;width:auto"></div><div class="mdui-divider"></div><div style="height: 20px;width:auto"></div>
+
+    <h1>JavaScript 输出</h1>
+
+    <div class="mdui-divider"></div>
+
+    <h2>JavaScript 不提供任何内建的打印或显示函数。</h2>
+
+    <div style="height: 20px;width:auto"></div><div class="mdui-divider"></div><div style="height: 20px;width:auto"></div>
+
+    <h3>JavaScript 显示方案</h3>
+    <div style="height: 20px;width:auto"></div><div class="mdui-divider"></div><div style="height: 20px;width:auto"></div>
+    <h3>JavaScript 能够以不同方式“显示”数据：(5+6)</h3>
+    <div class="mdui-typo">
+        <ul>
+            <li>使用 <code>window.alert()</code> 写入 警告框 <button onclick="mj7()">点击我！</button> <p>这会显示一个警告框</p></li>
+            <li>使用 <code>document.write()</code> 写入 HTML 输出 <p>只能在 HTML 输出流中使用</p> <script>document.write(5 + 6);</script></li>
+            <li>使用 <code>innerHTML</code> 写入 HTML 元素 <button onclick="mj9()">点击我！</button> <p id="demo4"></p></li>
+            <li>使用 <code>console.log()</code> 写入 浏览器控制台 <p>通过 F12 来激活并选择浏览器控制台</p> <script>console.log(5 + 6);</script></li>
+
+        </ul>
+    </div>
 
 
-    <h1>我的第五段 JavaScript</h1>
-
-    <p id="demo-test2">
-    JavaScript 能改变 HTML 元素的样式。
-    </p>
-    
-    
-    <button type="button" onclick="myFunction2()">点击这里</button>
 
 
-    <h1>我的第六段 JavaScript</h1>
-
-    <p>请输入数字。如果输入值不是数字，浏览器会弹出提示框。</p>
-        
-    <input id="demo-test3" type="text">
-        
-        
-    <button type="button" onclick="myFunction3()">点击这里</button>
 
 
-    <h1>我的第七段 JavaScript</h1>
-    <button onclick="myFunction4()">Have a try!</button>
+
+
+
+    <div style="height: 20px;width:auto"></div>
+    </div>
 </body>
 </html>
